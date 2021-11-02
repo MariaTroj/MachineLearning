@@ -28,7 +28,7 @@ if __name__ == "__main__":
     plt.show()
 
     train_x, test_x, train_y, test_y = train_test_split(df[['ENGINESIZE']], df[['CO2EMISSIONS']],
-                                                        0.8)
+                                                        test_size=0.2)
 
     # model the data
     # calculate coefficients for simple linear regression (ax + b), x-axis is engine size,

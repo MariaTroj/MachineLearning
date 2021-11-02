@@ -6,7 +6,7 @@ if __name__ == "__main__":
     df = pd.read_csv("..\\FuelConsumption.csv")
 
     train_x, test_x, train_y, test_y = train_test_split(df[['ENGINESIZE']], df[['CO2EMISSIONS']],
-                                                        0.8)
+                                                        test_size=0.2)
 
     """
     PolynomialFeatures() drives a new feature sets from the original feature set. For example, the 

@@ -6,8 +6,8 @@ if __name__ == "__main__":
     df = pd.read_csv("..\\FuelConsumption.csv")
 
     train_x, test_x, train_y, test_y = train_test_split(df[['ENGINESIZE', 'CYLINDERS',
-                                                             'FUELCONSUMPTION_COMB']],
-                                                        df[['CO2EMISSIONS']], 0.8)
+                                                            'FUELCONSUMPTION_COMB']],
+                                                        df[['CO2EMISSIONS']], test_size=0.8)
 
     # model the data
     # calculate coefficients for simple linear regression (a0 + a1x1 + a2x2 +...+ anxn)

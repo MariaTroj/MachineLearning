@@ -1,7 +1,6 @@
 from scipy.optimize import curve_fit
 from week2_functions import *
 
-
 # Sigmoid/Logistic function
 # startS with a slow growth, increase growth in the middle, and decrease at the end
 # 𝛽_1 : Controls the curve's steepness,
@@ -49,7 +48,7 @@ if __name__ == "__main__":
     plt.xlabel('Year')
     plt.show()
 
-    train_x, test_x, train_y, test_y = train_test_split(xdata, ydata, 0.8)
+    train_x, test_x, train_y, test_y = train_test_split(xdata, ydata, test_size=0.2)
     popt, pcov = curve_fit(sigmoid, train_x, train_y)
     y_predict = sigmoid(test_x, *popt)
     metrics(test_y, y_predict)

@@ -2,7 +2,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from sklearn.metrics import r2_score
-import numpy as np
+from sklearn.model_selection import train_test_split
+
 
 # different model evaluation metrics:
     #  - Mean Absolute Error: mean of the absolute value of the errors. The easiest to understand
@@ -26,7 +27,7 @@ def metrics(test_y, predict_y):
     # np.random.rand(a) returns ax1 ndarray filled with floats from range (0, 1)
     # np.random.rand(a) < b ax1 ndarray filled with True if random float is less than b and False
     # otherwise
-def train_test_split(x_data, y_data, trigger):
+def custom_train_test_split(x_data, y_data, trigger):
     msk = np.random.rand(len(x_data)) < trigger
     train_x = x_data[msk]
     test_x = x_data[~msk]
